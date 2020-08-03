@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import './styles.scss';
 
@@ -18,14 +19,14 @@ export default function Landing() {
         </div>
         <img src={imageLanding} alt="Plataforma de estudos" className="hero-image"/>
         <div className="buttons-container">
-          <a href="#estudar" className="study">
+          <Link to="/estudar" className="study">
             <img src={iconStudy} alt="Estudar"/>
             Estudar
-          </a>
-          <a href="#ensinar" className="teach">
+          </Link>
+          <Link to="/ensinar" className="teach">
             <img src={iconTeach} alt="Ensinar"/>
             Ensinar
-          </a>
+          </Link>
         </div>
         <div className="total-connections">
           Total de 200 conexões já realizadas
