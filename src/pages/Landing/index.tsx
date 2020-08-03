@@ -1,13 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import './styles.scss';
+import imageLogo from '../../assets/images/logo.svg';
+import imageLanding from '../../assets/images/landing.svg';
+import iconStudy from '../../assets/images/icons/study.svg';
+import iconTeach from '../../assets/images/icons/teach.svg';
+import iconPurpleHeart from '../../assets/images/icons/purple-heart.svg';
 
-import imageLogo from '../../images/logo.svg';
-import imageLanding from '../../images/landing.svg';
-import iconStudy from '../../images/icons/study.svg';
-import iconTeach from '../../images/icons/teach.svg';
-import iconPurpleHeart from '../../images/icons/purple-heart.svg';
+import './styles.scss';
 
 export default function Landing() {
   return (

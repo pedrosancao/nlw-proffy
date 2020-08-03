@@ -1,9 +1,7 @@
-@import '../../styles/mixins.scss';
+@import '../../assets/styles/mixins.scss';
 
 #page-landing {
-  width: 100vw;
-  height: 100vh;
-  overflow: auto;
+  @include full-screen;
   @include flex-center-x;
   background-color: var(--color-primary);
   color: var(--color-text-in-primary);
