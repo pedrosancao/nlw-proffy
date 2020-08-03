@@ -2,36 +2,41 @@
 
 #page-teacher-list {
   @include full-screen;
-}
 
-#search-teachers {
-  label {
-    color: var(--color-text-in-primary);
-  }
-  input {
-    width: 100%;
-    @include rounded-input;
-  }
-  .input-block {
-    @include focus-border;
-
-    + .input-block {
-      margin-top: 1.4rem;
+  #search-teachers {
+    label {
+      color: var(--color-text-in-primary);
     }
+    input {
+      width: 100%;
+      @include rounded-input;
+    }
+    .input-block {
+      @include focus-border;
+
+      + .input-block {
+        margin-top: 1.4rem;
+      }
+    }
+  }
+  main {
+    margin: 4.2rem auto;
+    width: 90%;
   }
 }
 
 @media (min-width: 700px) {
   #page-teacher-list {
     max-width: 100%;
-  }
-  #search-teachers {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    column-gap: 16px;
 
-    .input-block + .input-block {
-      margin: 0;
+    #search-teachers {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      column-gap: 16px;
+
+      .input-block + .input-block {
+        margin: 0;
+      }
     }
-  }  
+  }
 }

@@ -1,0 +1,127 @@
+@import '../../assets/styles/mixins.scss';
+
+.teacher-item {
+  margin-top: 2.4rem;
+  background-color: var(--color-box-base);
+  border: 1px solid var(--color-line-in-white);
+  border-radius: 0.8rem;
+
+  header {
+    @include flex-center-y;
+    margin-bottom: 1.2rem;
+    padding: 2rem;
+
+    img {
+      width: 8rem;
+      height: 8rem;
+      margin-right: 1rem;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+    h3 {
+      font: 700 2.4rem Archivo;
+    }
+    span {
+      display: block;
+      margin-top: 1rem;
+      font-size: 1.6rem;
+    }
+  }
+  > p {
+    padding: 0 2rem;
+    margin-bottom: 2rem;
+    font-size: 1.6rem;
+    line-height: 2.8rem;
+  }
+  footer {
+    @include flex-center;
+    flex-wrap: wrap;
+    padding: 3.2rem;
+    background-color: var(--color-box-footer);
+    border-top: 1px solid var(--color-line-in-white);
+    border-radius: 0 0 0.8rem 0.8rem;
+
+    strong {
+      margin-left: 0.8rem;
+      font: 700 2.2rem Archivo;
+      color: var(--color-primary);
+    }
+    .buttons-container {
+      display: flex;
+      width: 100%;
+      margin-top: 2.4rem;
+    }
+    button {
+      @include flex-center;
+      height: 5.6rem;
+      padding: 0 1.4rem;
+      border: 0;
+      border-radius: 0.8rem;
+      font: 700 1.4rem Archivo;
+      cursor: pointer;
+      transition: background-color 200ms;
+
+      &#favorite-button {
+        width: 5.6rem;
+        margin-right: 1.2rem;
+        background-color: var(--color-primary-lighter);
+        img {
+          outline: 1px solid var(--color-line-in-white);
+        }
+        &:hover {
+          background-color: var(--color-primary-light);
+        }
+      }
+      &#contact-button {
+        flex-grow: 1;
+        background-color: var(--color-secondary);
+        color: var(--color-button-text);
+
+        img {
+          margin-right: 1.4rem;
+        }
+        &:hover {
+          background-color: var(--color-secondary-dark);
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 700px) {
+  .teacher-item {
+    header {
+      padding: 3.2rem;
+
+      img {
+        margin-right: 2rem;
+      }
+    }
+    > p {
+      padding: 0 3.2rem;
+      margin-bottom: 3.2rem;
+    }
+    footer {
+      justify-content: space-between;
+      flex-wrap: nowrap;
+      width: auto;
+
+      .buttons-container {
+        display: block;
+        width: auto;
+        margin: 0;
+      }
+      button {
+        font-size: 1.6rem;
+
+        &#favorite-button {
+          display: none;
+        }
+        &#contact-button {
+          flex-grow: 0;
+          width: 24.5rem;
+        }
+      }
+    }
+  }
+}
