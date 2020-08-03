@@ -1,0 +1,72 @@
+@import '../../styles/mixins.scss';
+
+#page-landing {
+  width: 100vw;
+  height: 100vh;
+  overflow: auto;
+  @include flex-center-x;
+  background-color: var(--color-primary);
+  color: var(--color-text-in-primary);
+}
+#page-landing-content {
+  margin: auto;
+}
+.logo-container {
+  text-align: center;
+  margin: 3.2rem 0;
+
+  img {
+    height: 10rem;
+  }
+  h2 {
+    font-weight: 500;
+    font-size: 2.4rem;
+    line-height: 4.6rem;
+    margin-top: 0.8rem;
+  }
+}
+.hero-image {
+  width: 100%;
+}
+.buttons-container {
+  @include flex-center-x;
+  margin: 3.2rem 0;
+
+  a {
+    @include flex-center;
+    width: 30rem;
+    height: 10.4rem;
+    border-radius: 0.8rem;
+    font: 700 2rem Archivo;
+    text-decoration: none;
+    color: var(--color-button-text);
+    transition: background-color 200ms;
+
+    &:not(:last-child) {
+      margin-right: 1.6rem;
+    }
+    img {
+      width: 4rem;
+    }
+    &.study {
+      background-color: var(--color-primary-lighter);
+      &:hover {
+        background-color: var(--color-primary-light);
+      }
+    }
+    &.teach {
+      background-color: var(--color-secondary);
+      &:hover {
+        background-color: var(--color-secondary-dark);
+      }
+    }
+  }
+}
+.total-connections {
+  @include flex-center;
+  font-size: 1.4rem;
+
+  &:not(:last-child) {
+    margin-right: 0.8rem;
+  }
+}

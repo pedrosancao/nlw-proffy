@@ -1,9 +1,13 @@
 import React from 'react';
 
+import './assets/styles/global.scss';
+import './assets/pages/Landing';
+import Landing from './assets/pages/Landing';
+
 function App() {
   return (
     <div className="App">
-      <h1>Proffy</h1>
+      <Landing/>
     </div>
   );
 }
