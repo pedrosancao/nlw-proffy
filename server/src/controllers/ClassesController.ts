@@ -3,7 +3,7 @@ import database from '../database/connection';
 import { ScheduleItem } from '../interfaces';
 import { convertHourToMinutes } from '../utils';
 
-export default class ClassesController {
+class ClassesController {
   async index (request: Request, response: Response) {
     const filters = request.query;
 
@@ -56,9 +56,12 @@ export default class ClassesController {
 
       return response.status(201).json({ status: 'ok' });
     } catch (error) {
+      console.log(error);
       transaction.rollback();
       return response.status(400).json({ status: 'error' });
     }
   }
 
 }
+
+export default new ClassesController();
