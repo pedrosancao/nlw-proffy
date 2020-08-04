@@ -8,6 +8,7 @@ router.get('/', (request, response) => {
 });
 
 const classesController = new ClassesController();
+router.get('/classes', classesController.index);
 router.post('/classes', classesController.create);
 
 export default router;
