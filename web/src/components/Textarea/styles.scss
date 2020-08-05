@@ -1,0 +1,40 @@
+@import '../../assets/styles/mixins.scss';
+
+.textarea-block {
+  @include focus-border;
+
+  + .input-block,
+  + .select-block,
+  + .textarea-block {
+    margin-top: 1.4rem;
+  }
+  label {
+    @include flex-center-y;
+
+    small {
+      margin-left: 0.8rem;
+      color: var(--color-text-complement);
+      font-size: 1.2rem;
+      line-height: 2rem;
+
+      &::before {
+        content: '(';
+      }
+      &::after {
+        content: ')';
+      }
+    }
+    &:focus-within::after {
+      bottom: 2px;
+    }
+  }
+  textarea {
+    @include rounded-input;
+    width: 100%;
+    height: 16rem;
+    max-height: 80vh;
+    min-height: 16rem;
+    padding: 1.2rem 1.6rem;;
+    resize: vertical;
+  }
+}

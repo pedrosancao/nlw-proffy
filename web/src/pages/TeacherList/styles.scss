@@ -7,17 +7,6 @@
     label {
       color: var(--color-text-in-primary);
     }
-    input {
-      width: 100%;
-      @include rounded-input;
-    }
-    .input-block {
-      @include focus-border;
-
-      + .input-block {
-        margin-top: 1.4rem;
-      }
-    }
   }
   main {
     margin: 4.2rem auto;
@@ -34,7 +23,9 @@
       grid-template-columns: repeat(3, 1fr);
       column-gap: 16px;
 
-      .input-block + .input-block {
+      .input-block + .input-block,
+      .select-block + .input-block,
+      .select-block + .select-block {
         margin: 0;
       }
     }

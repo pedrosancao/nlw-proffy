@@ -1,0 +1,32 @@
+@import '../../assets/styles/mixins.scss';
+
+.input-block {
+  @include focus-border;
+
+  + .input-block,
+  + .select-block,
+  + .textarea-block {
+    margin-top: 1.4rem;
+  }
+  label {
+    @include flex-center-y;
+
+    small {
+      margin-left: 0.8rem;
+      color: var(--color-text-complement);
+      font-size: 1.2rem;
+      line-height: 2rem;
+
+      &::before {
+        content: '(';
+      }
+      &::after {
+        content: ')';
+      }
+    }
+  }
+  input {
+    @include rounded-input;
+    width: 100%;
+  }
+}

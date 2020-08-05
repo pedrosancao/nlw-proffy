@@ -7,7 +7,8 @@ import iconBack from '../../assets/images/icons/back.svg';
 import './styles.scss';
 
 interface PageHeaderProps {
-  title: string
+  title: string;
+  subtitle?: string;
 }
 
 const PageHeader: React.FunctionComponent<PageHeaderProps> = props =>  {
@@ -21,6 +22,7 @@ const PageHeader: React.FunctionComponent<PageHeaderProps> = props =>  {
       </div>
       <div className="header-content container">
         <strong>{props.title}</strong>
+        { props.subtitle && <p>{props.subtitle}</p> }
         {props.children}
       </div>
     </header>
