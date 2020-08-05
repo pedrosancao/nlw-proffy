@@ -46,8 +46,8 @@ class ClassesController {
         const { weekday, time_from, time_to } = scheduleItem;
         return {
           weekday: scheduleItem.weekday,
-          time_from: convertHourToMinutes(scheduleItem.time_from),
-          time_to: convertHourToMinutes(scheduleItem.time_to),
+          time_from: convertHourToMinutes(scheduleItem.timeFrom),
+          time_to: convertHourToMinutes(scheduleItem.timeTo),
           class_id: idClasses[0]
         };
       }));
