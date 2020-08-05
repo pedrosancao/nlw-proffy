@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PageHeader from '../../components/PageHeader';
 import Input from '../../components/Input';
 import Textarea from '../../components/Textarea';
@@ -10,6 +10,17 @@ import iconWarning from '../../assets/images/icons/warning.svg';
 import './styles.scss';
 
 export default function TeacherForm() {
+  const defaultScheduleItem = { weekday: '', timeFrom: '', timeTo: '' };
+  const [scheduleItems, setScheduleItems] = useState([defaultScheduleItem]);
+  const [mayAddSchedule, setMayAddSchedule] = useState(true);
+
+  function addScheduleItem() {
+    if (scheduleItems.length >= 6) {
+      setMayAddSchedule(false);
+    }
+    setScheduleItems([...scheduleItems, defaultScheduleItem]);
+  }
+
   return (
     <div id="page-teacher-form" className="container">
       <PageHeader
@@ -33,19 +44,23 @@ export default function TeacherForm() {
         <fieldset aria-labelledby="schedule-legend">
           <div id="schedule-legend" className="legend">
             Horários disponíveis
-            <button>+ Novo horário</button>
+            {mayAddSchedule && <button onClick={addScheduleItem}>+ Novo horário</button>}
           </div>
-          <div className="schedule-form">
-            <div className="weekday-container">
-              <SelectWeekday/>
-            </div>
-            <div className="time-form-container">
-              <Input name="time-form" label="Das" description="hh:mm" type="time"/>
-            </div>
-            <div className="time-to-container">
-              <Input name="time-to" label="Até" description="hh:mm" type="time"/>
-            </div>
-          </div>
+          {scheduleItems.map((scheduleItem, index) => {
+            return (
+              <div className="schedule-form" key={index}>
+                <div className="weekday-container">
+                  <SelectWeekday/>
+                </div>
+                <div className="time-form-container">
+                  <Input name="time-form" label="Das" description="hh:mm" type="time"/>
+                </div>
+                <div className="time-to-container">
+                  <Input name="time-to" label="Até" description="hh:mm" type="time"/>
+                </div>
+              </div>
+            );
+          })}
         </fieldset>
         <footer>
           <p>

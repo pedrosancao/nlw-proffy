@@ -23,8 +23,8 @@ const Select: React.FunctionComponent<SelectProps> = ({
         {label}
         {description && <small>{description}</small> }
       </label>
-      <select {...selectAttributes}>
-        <option value="" selected disabled hidden>Selecione uma opção</option>
+      <select defaultValue="" {...selectAttributes}>
+        <option value="" disabled hidden>Selecione uma opção</option>
         {options.map((option, index) => {
           return <option key={index} value={option.value}>{option.label || option.value}</option>
         })}
