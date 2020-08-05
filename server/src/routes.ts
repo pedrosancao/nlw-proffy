@@ -10,7 +10,7 @@ router.get('/', (request, response) => {
 
 router.get('/classes', ClassesController.index);
 router.post('/classes', ClassesController.create);
-router.get('/connection', ConnectionsController.count);
-router.post('/connection', ConnectionsController.create);
+router.get('/connections', ConnectionsController.count);
+router.post('/connections', ConnectionsController.create);
 
 export default router;
