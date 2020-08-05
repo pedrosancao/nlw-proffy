@@ -51,6 +51,7 @@
       width: 100%;
       margin-top: 2.4rem;
     }
+    a,
     button {
       @include flex-center;
       height: 5.6rem;
@@ -58,6 +59,7 @@
       border: 0;
       border-radius: 0.8rem;
       font: 700 1.4rem Archivo;
+      text-decoration: none;
       cursor: pointer;
       transition: background-color 200ms;
 

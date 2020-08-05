@@ -1,4 +1,5 @@
 import React from 'react';
+import api from '../../services/api';
 
 import iconPurpleHeart from '../../assets/images/icons/purple-heart.svg';
 import iconWhatsapp from '../../assets/images/icons/whatsapp.svg';
@@ -19,6 +20,10 @@ interface TeacherItemProps {
 }
 
 const TeacherItem: React.FunctionComponent<TeacherItemProps> = props => {
+  function storeConnection() {
+    api.post('connections', { user_id: props.classInfo.user_id });
+  }
+
   return (
     <article className="teacher-item">
       <header>
@@ -41,10 +46,16 @@ const TeacherItem: React.FunctionComponent<TeacherItemProps> = props => {
           <button id="favorite-button">
             <img src={iconPurpleHeart} alt="Coração roxo"/>
           </button> 
-          <button id="contact-button" data-user-id={props.classInfo.user_id}>
+          <a
+            href={`https://wa.me/${props.classInfo.whatsapp}`} 
+            id="contact-button" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            onClick={storeConnection}
+          >
             <img src={iconWhatsapp} alt="Whatsapp"/>
             Entrar em contato
-          </button>
+          </a>
         </div>
       </footer>
     </article>
