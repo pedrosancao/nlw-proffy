@@ -6,7 +6,7 @@ import { StyleSheet, Text, View } from 'react-native';
 import { Archivo_400Regular, Archivo_700Bold, useFonts } from '@expo-google-fonts/archivo';
 import { Poppins_400Regular, Poppins_600SemiBold } from '@expo-google-fonts/poppins';
 
-import Landing from './src/pages/Landing';
+import StackNavigation from './src/routes/StackNavigation';
 
 export default function App() {
   let [fontsLoaded] = useFonts({
@@ -21,7 +21,7 @@ export default function App() {
   } else {
     return (
       <>
-        <Landing/>
+        <StackNavigation/>
         <StatusBar style="light" />
       </>
     );

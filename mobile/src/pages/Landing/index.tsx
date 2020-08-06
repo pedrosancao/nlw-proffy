@@ -1,5 +1,7 @@
 import React from 'react';
-import { View, Image, Text, TouchableOpacity } from 'react-native';
+import { View, Image, Text } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
+import { RectButton } from 'react-native-gesture-handler';
 
 import iconStudy from '../../assets/images/icons/study.png';
 import iconTeach from '../../assets/images/icons/teach.png';
@@ -9,6 +11,15 @@ import imageLanding from '../../assets/images/landing.png';
 import styles from './styles';
 
 export default function Landing() {
+  const { navigate } = useNavigation();
+
+  function navigateToStudyRoute() {
+    navigate('Study');
+  }
+  function navigateToTeachRoute() {
+    navigate('Teach');
+  }
+
   return (
     <View style={styles.container}>
       <Image source={imageLanding} style={styles.banner}/>
@@ -19,14 +30,20 @@ export default function Landing() {
         </Text>
       </Text>
       <View style={styles.buttonsContainer}>
-        <TouchableOpacity style={[styles.button, styles.buttonPrimary]}>
+        <RectButton
+          style={[styles.button, styles.buttonPrimary]}
+          onPress={navigateToStudyRoute}
+        >
           <Image source={iconStudy}/>
           <Text style={styles.buttonText}>Estudar</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={[styles.button, styles.buttonSecondary]}>
+        </RectButton>
+        <RectButton
+          style={[styles.button, styles.buttonSecondary]}
+          onPress={navigateToTeachRoute}
+        >
           <Image source={iconTeach}/>
           <Text style={styles.buttonText}>Ensinar</Text>
-        </TouchableOpacity>
+        </RectButton>
       </View>
       <Text style={styles.totalConnections}>
         Total de 285 conexões já realizadas {' '}
