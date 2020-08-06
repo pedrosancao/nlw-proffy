@@ -27,7 +27,7 @@ const TeacherItem: React.FunctionComponent<TeacherItemProps> = props => {
   return (
     <article className="teacher-item">
       <header>
-        <img src="https://avatars2.githubusercontent.com/u/5047991?s=460&u=78793349fb74e7bb9178013f388337a05c4085f3&v=4" alt="Pedro Sanção"/>
+        <img src={props.classInfo.avatar} alt={props.classInfo.name}/>
         <div>
           <h3>{props.classInfo.name}</h3>
           <span>{props.classInfo.subject}</span>
