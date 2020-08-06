@@ -2,6 +2,7 @@
   "name": "web",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://pedrosancao.github.io/nlw-proffy/",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
@@ -20,6 +21,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "build-github": "REACT_APP_API_URL='faux-api' react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
