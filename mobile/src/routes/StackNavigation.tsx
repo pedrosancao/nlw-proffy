@@ -3,8 +3,8 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
 import Landing from '../pages/Landing';
-import Study from '../pages/Study';
 import Teach from '../pages/Teach';
+import StudyNavigation from './StudyNavigation';
 
 const { Navigator, Screen } = createStackNavigator();
 
@@ -14,7 +14,7 @@ export default function StackNavigation() {
       <Navigator screenOptions={{ headerShown: false }}>
         <Screen name="Landing" component={Landing}/>
         <Screen name="Teach" component={Teach}/>
-        <Screen name="Study" component={Study}/>
+        <Screen name="Study" component={StudyNavigation}/>
       </Navigator>
     </NavigationContainer>
   );
