@@ -20,7 +20,7 @@ export default StyleSheet.create({
     marginTop: 80,
   },
   titleBold: {
-    fontFamily: 'Poppins_600SemiBold'
+    fontFamily: 'Poppins_600SemiBold',
   },
   buttonsContainer: {
     marginTop: 40,
@@ -39,7 +39,7 @@ export default StyleSheet.create({
     backgroundColor: '#9871F5',
   },
   buttonSecondary: {
-    backgroundColor: '#04D364',
+    backgroundColor: '#04D361',
   },
   buttonText: {
     fontFamily: 'Archivo_700Bold',
