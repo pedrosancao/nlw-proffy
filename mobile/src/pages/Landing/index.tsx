@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { View, Image, Text } from 'react-native';
-import { useNavigation } from '@react-navigation/native';
+import { useFocusEffect, useNavigation } from '@react-navigation/native';
 import { RectButton } from 'react-native-gesture-handler';
 
 import iconStudy from '../../assets/images/icons/study.png';
@@ -16,12 +16,11 @@ export default function Landing() {
   const [totalConnections, setTotalConnections] = useState(0);
   const { navigate } = useNavigation();
 
-  useEffect(() => {
+  useFocusEffect(React.useCallback(() => {
     api.get('connections').then(({ data }) => {
       setTotalConnections(data.total);
     });
-
-  }, []);
+  }, []));
 
   function navigateToStudyRoute() {
     navigate('Study');
