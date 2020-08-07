@@ -19,7 +19,7 @@ Foi criado com Node, React, Express e SQLite.
 
 Após clonar o repositório, siga os passos para iniciar a aplicação.
 
-PAra servir a API:
+Para servir a API:
 
 ```bash
 # navegar para o diretório server
