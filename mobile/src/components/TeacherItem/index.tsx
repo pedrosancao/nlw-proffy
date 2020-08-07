@@ -1,41 +1,68 @@
 import React, { useState } from 'react';
-import { View, Image, Text } from 'react-native';
+import { Image, Linking, Text, View } from 'react-native';
 import { RectButton } from 'react-native-gesture-handler';
 
 import iconFavorite from '../../assets/images/icons/heart-outline.png';
 import iconUnfavorite from '../../assets/images/icons/unfavorite.png';
 import iconWhatsapp from '../../assets/images/icons/whatsapp.png';
 
+import api from '../../services/api';
+
 import styles from './styles';
 
-export default function TeacherItem() {
+interface TeacherItemProps {
+  classInfo: {
+    "user_id": Number;
+    "name": string;
+    "avatar": string;
+    "title": string;
+    "bio": string;
+    "subject": string;
+    "cost": Number;
+    "whatsapp": string;
+  };
+}
+
+const TeacherItem: React.FunctionComponent<TeacherItemProps> = ({ classInfo }) => {
   const [isFavorite, setIsFavorite] = useState(false);
 
   function addRemoveFavorite() {
     setIsFavorite(!isFavorite);
+  }
+  function storeConnection() {
+    api.post('connections', { user_id: classInfo.user_id });
+  }
+  function openWhatsappContact() {
+    Linking.openURL(`whatsapp://send?phone=+55${classInfo.whatsapp}`).catch(error => {
+      console.log('Erro ao abrir Whatsapp');
+    });
+  }
+  function handleContactButton() {
+    storeConnection();
+    openWhatsappContact();
   }
 
   return (
     <View style={styles.container}>
       <View style={styles.profile}>
         <Image style={styles.avatar} source={{
-          uri: 'https://avatars1.githubusercontent.com/u/5047991?s=460&u=2a731397d3d4f9fe8ce4b1466493c10232f6ad04&v=4'
+          uri: classInfo.avatar
         }}/>
         <View style={styles.profileInfo}>
-          <Text style={styles.name}>Pedro Sanção</Text>
-          <Text style={styles.subject}>Matemática</Text>
+          <Text style={styles.name}>{classInfo.name}</Text>
+          <Text style={styles.subject}>{classInfo.subject}</Text>
         </View>
       </View>
       <Text style={[styles.profileText, styles.title]}>
-        Nam quod quia est consectetur vitae consequatur illo reiciendis libero distinctio.
+      {classInfo.title}
       </Text>
       <Text style={[styles.profileText, styles.bio]}>
-        Qui aspernatur at et corporis autem in et doloremque adipisci ut dolores necessitatibus est deserunt cupiditate sed rerum reiciendis qui sed quasi ducimus impedit doloribus qui quia blanditiis harum.
+      {classInfo.bio}
       </Text>
       <View style={styles.footer}>
         <Text style={styles.cost}>
           Preço/hora {'   '}
-          <Text style={styles.costValue}>R$ 80,00</Text>
+          <Text style={styles.costValue}>R$ {classInfo.cost}</Text>
         </Text>
         <View style={styles.buttonsContainer}>
           <RectButton
@@ -44,15 +71,14 @@ export default function TeacherItem() {
           >
             <Image source={isFavorite ? iconUnfavorite : iconFavorite}/>
           </RectButton>
-          <RectButton style={styles.buttonContact}>
+          <RectButton style={styles.buttonContact} onPress={handleContactButton}>
             <Image source={iconWhatsapp}/>
             <Text style={styles.contactText}>Entar em contato</Text>
           </RectButton>
         </View>
       </View>
-      {/*
-      href={`https://wa.me/+55${props.classInfo.whatsapp}`}
-      */}
     </View>
   );
 }
+
+export default TeacherItem;

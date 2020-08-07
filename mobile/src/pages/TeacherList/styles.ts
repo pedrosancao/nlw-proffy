@@ -52,46 +52,21 @@ export default StyleSheet.create({
     marginTop: -60,
     marginHorizontal: 12,
   },
-
-
-
-
-
-
-
-
-
-
-
-  content: {
-    flexGrow: 1,
-    justifyContent: 'center',
-  },
-  title: {
-    maxWidth: 180,
-    fontFamily: 'Archivo_700Bold',
-    color: '#FFF',
-    fontSize: 32,
-    lineHeight: 37,
-  },
-  text: {
-    maxWidth: 240,
-    marginTop: 24,
-    fontFamily: 'Archivo_400Regular',
-    color: '#D4C2FF',
-    fontSize: 16,
-    lineHeight: 26,
-  },
-  buttonConfirm: {
-    marginVertical: 40,
-    paddingVertical: 24,
-    borderRadius: 8,
+  emptyResult: {
     alignItems: 'center',
-    backgroundColor: '#04D361',
+    justifyContent: 'center',
+    height: 200,
+    marginBottom: 16,
+    paddingHorizontal: '20%',
+    overflow: 'hidden',
+    backgroundColor:'#f8f8fc',
+    borderWidth: 1,
+    borderColor: '#E6E6F0',
+    borderRadius: 8,
   },
-  textConfirm: {
-    fontFamily: 'Archivo_700Bold',
-    fontSize: 20,
-    color: '#FFF',
+  emptyResultText: {
+    fontFamily: 'Poppins_400Regular',
+    textAlign: 'center',
+    color: '#9C98A6',
   },
 });

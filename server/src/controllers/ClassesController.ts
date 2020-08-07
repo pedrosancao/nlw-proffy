@@ -20,7 +20,7 @@ class ClassesController {
 
     const classes = await database('classes')
       .join('users', 'users.id', 'classes.user_id')
-      .whereRaw('lower(`classes`.`subject`) like ?', [`%${subject}%`])
+      .whereRaw('lower(`classes`.`subject`) like ?', [`%${subject.trim()}%`])
       .whereExists(function () {
         this.from('class_schedules')
           .whereRaw('`class_id` = `classes`.`id`')
@@ -43,11 +43,11 @@ class ClassesController {
       const idClasses = await transaction('classes').insert({ subject, cost, user_id: idUsers[0] });
 
       await transaction('class_schedules').insert(schedule.map((scheduleItem: ScheduleItem) => {
-        const { weekday, time_from, time_to } = scheduleItem;
+        const { weekday, timeFrom, timeTo } = scheduleItem;
         return {
-          weekday: scheduleItem.weekday,
-          time_from: convertHourToMinutes(scheduleItem.timeFrom),
-          time_to: convertHourToMinutes(scheduleItem.timeTo),
+          weekday: weekday,
+          time_from: convertHourToMinutes(timeFrom),
+          time_to: convertHourToMinutes(timeTo),
           class_id: idClasses[0]
         };
       }));

@@ -98,6 +98,4 @@ export default StyleSheet.create({
     fontSize: 16,
     color: '#FFF',
   },
-  tmp: {
-  },
 });
