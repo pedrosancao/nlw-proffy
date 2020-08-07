@@ -20,7 +20,6 @@ export default function FavoriteTeachers() {
 
   async function loadFavorites() {
     const favorites = await Favorites.getFavorites();
-    console.log(favorites);
     setFavorites(favorites);
     if (favorites.length === 0) {
       setEmptyMessage('Nenhum proffy favorito.');
