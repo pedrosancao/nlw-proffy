@@ -20,6 +20,7 @@ export default function FavoriteTeachers() {
 
   async function loadFavorites() {
     const favorites = await Favorites.getFavorites();
+    console.log(favorites);
     setFavorites(favorites);
     if (favorites.length === 0) {
       setEmptyMessage('Nenhum proffy favorito.');
@@ -32,7 +33,7 @@ export default function FavoriteTeachers() {
       <ScrollView style={styles.teacherList}>
         {favorites.map((classItem, index) => {
           return (
-            <TeacherItem key={index} classInfo={classItem} favorite/>
+            <TeacherItem key={index} classInfo={classItem} favorite onUnfavorite={loadFavorites}/>
           );
         })}
         {favorites.length === 0 && (

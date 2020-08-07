@@ -24,9 +24,10 @@ export interface ClassInfo {
 interface TeacherItemProps {
   classInfo: ClassInfo;
   favorite: boolean;
+  onUnfavorite?: CallableFunction;
 }
 
-const TeacherItem: React.FunctionComponent<TeacherItemProps> = ({ classInfo, favorite }) => {
+const TeacherItem: React.FunctionComponent<TeacherItemProps> = ({ classInfo, favorite, onUnfavorite }) => {
   const [isFavorite, setIsFavorite] = useState<boolean>(!!favorite);
 
   async function toggleFavorite() {
@@ -38,6 +39,7 @@ const TeacherItem: React.FunctionComponent<TeacherItemProps> = ({ classInfo, fav
     }
     Favorites.setFavorites(favorites);
     setIsFavorite(!isFavorite);
+    onUnfavorite && isFavorite && onUnfavorite();
   }
   function storeConnection() {
     api.post('connections', { user_id: classInfo.user_id });
