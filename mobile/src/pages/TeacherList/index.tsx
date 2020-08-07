@@ -31,10 +31,6 @@ export default function TeacherList() {
   async function loadFavorites() {
     const favorites = await Favorites.getFavorites();
     setFavorites(favorites.map(favorite => favorite.user_id));
-    // reassign classes to force reload favorite button
-    const classesCopy = [...classes];
-    setClasses([]);
-    setClasses(classesCopy);
   }
   async function searchClasses() {
     Keyboard.dismiss();

@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useCallback, useState } from 'react';
 import { Image, Linking, Text, View } from 'react-native';
 import { RectButton } from 'react-native-gesture-handler';
+import { useFocusEffect } from '@react-navigation/native';
 
 import iconFavorite from '../../assets/images/icons/heart-outline.png';
 import iconUnfavorite from '../../assets/images/icons/unfavorite.png';
@@ -29,6 +30,10 @@ interface TeacherItemProps {
 
 const TeacherItem: React.FunctionComponent<TeacherItemProps> = ({ classInfo, favorite, onUnfavorite }) => {
   const [isFavorite, setIsFavorite] = useState<boolean>(!!favorite);
+
+  useFocusEffect(useCallback(() => {
+    setIsFavorite(favorite);
+  }, [favorite]));
 
   async function toggleFavorite() {
     const favorites = await Favorites.getFavorites();
