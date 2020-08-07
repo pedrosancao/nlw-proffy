@@ -97,7 +97,7 @@ export default function TeacherList() {
         })}
         {searched && classes.length === 0 && (
           <div className="no-results">
-            <p>Nenhum professor encontrado<br/>para sua pesquisa.</p>
+            <p>Nenhum proffy encontrado<br/>para sua pesquisa.</p>
           </div>
         )}
       </main>
