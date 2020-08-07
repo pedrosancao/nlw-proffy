@@ -6,27 +6,37 @@ import iconFavorite from '../../assets/images/icons/heart-outline.png';
 import iconUnfavorite from '../../assets/images/icons/unfavorite.png';
 import iconWhatsapp from '../../assets/images/icons/whatsapp.png';
 
+import Favorites from '../../services/Favorites';
 import api from '../../services/api';
 
 import styles from './styles';
 
+export interface ClassInfo {
+  user_id : Number;
+  name    : string;
+  avatar  : string;
+  title   : string;
+  bio     : string;
+  subject : string;
+  cost    : Number;
+  whatsapp: string;
+}
 interface TeacherItemProps {
-  classInfo: {
-    "user_id": Number;
-    "name": string;
-    "avatar": string;
-    "title": string;
-    "bio": string;
-    "subject": string;
-    "cost": Number;
-    "whatsapp": string;
-  };
+  classInfo: ClassInfo;
+  favorite: boolean;
 }
 
-const TeacherItem: React.FunctionComponent<TeacherItemProps> = ({ classInfo }) => {
-  const [isFavorite, setIsFavorite] = useState(false);
+const TeacherItem: React.FunctionComponent<TeacherItemProps> = ({ classInfo, favorite }) => {
+  const [isFavorite, setIsFavorite] = useState<boolean>(!!favorite);
 
-  function addRemoveFavorite() {
+  async function toggleFavorite() {
+    const favorites = await Favorites.getFavorites();
+    if (isFavorite) {
+      favorites.splice(favorites.findIndex(favorite => classInfo.user_id = favorite.user_id), 1);
+    } else {
+      favorites.push(classInfo);
+    }
+    Favorites.setFavorites(favorites);
     setIsFavorite(!isFavorite);
   }
   function storeConnection() {
@@ -67,7 +77,7 @@ const TeacherItem: React.FunctionComponent<TeacherItemProps> = ({ classInfo }) =
         <View style={styles.buttonsContainer}>
           <RectButton
             style={[styles.buttonFavorite, styles[isFavorite ? 'buttonFavoriteActive' : 'buttonFavoriteInactive']]}
-            onPress={addRemoveFavorite}
+            onPress={toggleFavorite}
           >
             <Image source={isFavorite ? iconUnfavorite : iconFavorite}/>
           </RectButton>

@@ -1,11 +1,13 @@
-import React, { useState } from 'react';
+import React, { useCallback, useState } from 'react';
 import { Text, View, Keyboard } from 'react-native';
 import { RectButton, ScrollView, TextInput } from 'react-native-gesture-handler';
+import { useFocusEffect } from '@react-navigation/native';
 import { Feather } from '@expo/vector-icons';
 
 import PageHeader from '../../components/PageHeader';
-import TeacherItem from '../../components/TeacherItem';
+import TeacherItem, { ClassInfo } from '../../components/TeacherItem';
 
+import Favorites from '../../services/Favorites';
 import api from '../../services/api';
 
 import styles from './styles';
@@ -13,23 +15,37 @@ import styles from './styles';
 export default function TeacherList() {
   const [filtersIsVisible, setFiltersIsVisible] = useState(true);
   const [emptyMessage, setEmptyMessage] = useState('Preencha os filtros para carregar.');
-  const [classes, setClasses] = useState([]);
+  const [favorites, setFavorites] = useState<Number[]>([]);
+  const [classes, setClasses] = useState<ClassInfo[]>([]);
   const [subject, setSubject] = useState('');
   const [weekday, setWeekday] = useState('');
   const [time, setTime] = useState('');
 
-  function toggleFiltersIsVisible () {
+  useFocusEffect(useCallback(() => {
+    loadFavorites();
+  }, []));
+
+  function toggleFiltersIsVisible() {
     setFiltersIsVisible(!filtersIsVisible);
   }
+  async function loadFavorites() {
+    const favorites = await Favorites.getFavorites();
+    setFavorites(favorites.map(favorite => favorite.user_id));
+    // reassign classes to force reload favorite button
+    const classesCopy = [...classes];
+    setClasses([]);
+    setClasses(classesCopy);
+  }
   async function searchClasses() {
+    Keyboard.dismiss();
     if (!subject || !weekday || !time) {
       setEmptyMessage('Selecione todos os filtros para pesquisar.');
       return;
     }
-
-    Keyboard.dismiss();
+  
     setClasses([]);
     setEmptyMessage('Pesquisando.');
+    await loadFavorites();
     api.get('classes', { params: {
       subject,
       weekday,
@@ -98,7 +114,7 @@ export default function TeacherList() {
       <ScrollView style={styles.teacherList}>
         {classes.map((classItem, index) => {
           return (
-            <TeacherItem key={index} classInfo={classItem}/>
+            <TeacherItem key={index} classInfo={classItem} favorite={favorites.includes(classItem.user_id)}/>
           );
         })}
         {classes.length === 0 && (
