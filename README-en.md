@@ -52,7 +52,7 @@ Bootcamp participants were challenged to implement the following requirements:
 - [ ] User auth
 - [ ] Password recovery
 - [ ] Teacher profile
-- [ ] Splash screend
+- [ ] Splash screen
 - [ ] Pagination of classes result
 - [ ] Show teacher schedule hours
 - [ ] Save favorite teachers
