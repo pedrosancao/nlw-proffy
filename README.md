@@ -4,18 +4,20 @@
 ![Code size](https://img.shields.io/github/languages/code-size/pedrosancao/nlw-proffy)
 ![Node.js](https://img.shields.io/badge/Node.js-server-default?logo=node.js&logoColor=fff&color=339933)
 ![React](https://img.shields.io/badge/React-frontend-blue?logo=react&logoColor=fff)
-![SQLite](https://img.shields.io/badge/SQLite-databse-default?logo=SQLite&logoColor=fff&color=003B57)
+![PostgreeSQL](https://img.shields.io/badge/PostgreeSQL-database-default?logo=PostgreSQL&logoColor=fff&color=336791)
 
 Projeto do evento da Rocketseat "Next Level Week" conectando pessoas que querem assistir e apresentar aulas.
 
-Foi criado com Node, React, Express e SQLite.
+Foi criado com Node, React, Express e PostgreeSQL.
 
 ## Requisitos
 
 - NodeJs Stable (v10 or v12).
 - Yarn
+- Expo
+- Docker
 
-## Running the project
+## Executando o projeto localmente
 
 Após clonar o repositório, siga os passos para iniciar a aplicação.
 
@@ -24,8 +26,23 @@ Para servir a API:
 ```bash
 # navegar para o diretório server
 cd server/
+# copiar arquivo de variáveis de ambiente
+cp .env.example .env
 # instalar dependências do node (apenas na primeira execução)
 yarn install
+# iniciar banco PostgreSQL no docker
+docker run --name nlw -e POSTGRES_PASSWORD=docker -p 5432:5432 -d postgres
+```
+
+Agora conecte no contêiner utilizando as credenciais no `.env` para criar o banco de dados:
+
+```sql
+CREATE DATABASE proffy;
+```
+
+Continue no terminal com os seguintes comandos:
+
+```bash
 # criar tabelas no banco de dados (apenas na primeira execução)
 yarn migrate
 # iniciar servidor de desenvolvimento

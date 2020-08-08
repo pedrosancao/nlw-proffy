@@ -7,7 +7,7 @@ export async function up(knex: Knex): Promise<void> {
     table.string('avatar').notNullable();
     table.string('whatsapp').notNullable();
     table.string('title').notNullable();
-    table.string('bio').notNullable();
+    table.string('bio', 1000).notNullable();
   });
 }
 
