@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/nlw-proffy/static/css/main.a55cd383.chunk.css",
-    "main.js": "/nlw-proffy/static/js/main.22997307.chunk.js",
-    "main.js.map": "/nlw-proffy/static/js/main.22997307.chunk.js.map",
+    "main.js": "/nlw-proffy/static/js/main.a115d737.chunk.js",
+    "main.js.map": "/nlw-proffy/static/js/main.a115d737.chunk.js.map",
     "runtime-main.js": "/nlw-proffy/static/js/runtime-main.71782efc.js",
     "runtime-main.js.map": "/nlw-proffy/static/js/runtime-main.71782efc.js.map",
     "static/js/2.79997502.chunk.js": "/nlw-proffy/static/js/2.79997502.chunk.js",
     "static/js/2.79997502.chunk.js.map": "/nlw-proffy/static/js/2.79997502.chunk.js.map",
     "index.html": "/nlw-proffy/index.html",
-    "precache-manifest.187eb8d182f165629df2b666fc857cf6.js": "/nlw-proffy/precache-manifest.187eb8d182f165629df2b666fc857cf6.js",
+    "precache-manifest.778e989dcd6c605363c9aab53974bd42.js": "/nlw-proffy/precache-manifest.778e989dcd6c605363c9aab53974bd42.js",
     "service-worker.js": "/nlw-proffy/service-worker.js",
     "static/css/main.a55cd383.chunk.css.map": "/nlw-proffy/static/css/main.a55cd383.chunk.css.map",
     "static/js/2.79997502.chunk.js.LICENSE.txt": "/nlw-proffy/static/js/2.79997502.chunk.js.LICENSE.txt",
@@ -25,6 +25,6 @@
     "static/js/runtime-main.71782efc.js",
     "static/js/2.79997502.chunk.js",
     "static/css/main.a55cd383.chunk.css",
-    "static/js/main.22997307.chunk.js"
+    "static/js/main.a115d737.chunk.js"
   ]
 }
