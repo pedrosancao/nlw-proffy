@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "b0d2b5301e3da33118745d677b6e0de8",
+    "revision": "912f7c7bd5c6ef9c2af88ee600737a48",
     "url": "/nlw-proffy/index.html"
   },
   {
-    "revision": "004e10e51ac6a1bbbcbf",
+    "revision": "c4d7798ac19ce16f4fb3",
     "url": "/nlw-proffy/static/css/main.a55cd383.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/nlw-proffy/static/js/2.79997502.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "004e10e51ac6a1bbbcbf",
-    "url": "/nlw-proffy/static/js/main.9adb7233.chunk.js"
+    "revision": "c4d7798ac19ce16f4fb3",
+    "url": "/nlw-proffy/static/js/main.22997307.chunk.js"
   },
   {
     "revision": "79da39a474cb6fa19b32",
