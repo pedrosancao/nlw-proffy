@@ -1,0 +1,3 @@
+[submodule "server"]
+	path = server
+	url = git@github.com:pedrosancao/nlw-proffy-api.git
