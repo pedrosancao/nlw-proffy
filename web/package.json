@@ -19,9 +19,8 @@
     "typescript": "~3.7.2"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "REACT_APP_API_URL='http://localhost:8000' react-scripts start",
     "build": "react-scripts build",
-    "build-github": "REACT_APP_API_URL='faux-api' react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },

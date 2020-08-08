@@ -45,7 +45,7 @@ Back to terminal execute these commands:
 # create tables on database (only on first run)
 yarn migrate
 # start dev server
-yarn start
+yarn dev
 ```
 
 On another terminal run the React server for web:

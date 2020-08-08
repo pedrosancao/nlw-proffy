@@ -46,7 +46,7 @@ Continue no terminal com os seguintes comandos:
 # criar tabelas no banco de dados (apenas na primeira execução)
 yarn migrate
 # iniciar servidor de desenvolvimento
-yarn start
+yarn dev
 ```
 
 Em outro terminal execute o servidor do _React_ para web:
@@ -75,7 +75,7 @@ Ao final do evento os participantes foram desafiados a implementar as seguintes 
 -  [ ] Exibição de horários disponíveis dos "proffys"
 -  [ ] Salvar "proffys" favoritos
 -  [ ] Logout da aplicação
--  [ ] Deploy da aplicação
+-  [x] Deploy da aplicação
 
 Descrição completa no [_Notion_][proffy-v2].
 
