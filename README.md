@@ -66,16 +66,16 @@ yarn start
 
 Ao final do evento os participantes foram desafiados a implementar as seguintes funcionalidades:
 
--  [ ] Layout extendido da aplicação
--  [ ] Autenticação de usuários
--  [ ] Recuperação de senhas
--  [ ] Perfil do proffy
--  [ ] Splash Screen no React Native com Expo
--  [ ] Paginação na listagem de "proffys"
--  [ ] Exibição de horários disponíveis dos "proffys"
--  [ ] Salvar "proffys" favoritos
--  [ ] Logout da aplicação
--  [x] Deploy da aplicação
+- [ ] Layout extendido da aplicação
+- [x] Autenticação de usuários com JWT (parcial - apenas no _back-end_)
+- [ ] Recuperação de senhas
+- [ ] Perfil do proffy
+- [ ] Splash Screen no React Native com Expo
+- [ ] Paginação na listagem de "proffys"
+- [ ] Exibição de horários disponíveis dos "proffys"
+- [ ] Salvar "proffys" favoritos
+- [ ] Logout da aplicação
+- [x] Deploy da aplicação
 
 Descrição completa no [_Notion_][proffy-v2].
 

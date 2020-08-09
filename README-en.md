@@ -66,7 +66,7 @@ yarn start
 Bootcamp participants were challenged to implement the following requirements:
 
 - [ ] Extended layout
-- [ ] User auth
+- [x] User auth with JWT (partial - _back-end_ only)
 - [ ] Password recovery
 - [ ] Teacher profile
 - [ ] Splash screen
