@@ -6,6 +6,8 @@
 ![React](https://img.shields.io/badge/React-frontend-blue?logo=react&logoColor=fff)
 ![PostgreeSQL](https://img.shields.io/badge/PostgreeSQL-database-default?logo=PostgreSQL&logoColor=fff&color=336791)
 
+[_Read in English_](./README-en.md)
+
 Projeto do evento da Rocketseat "Next Level Week" conectando pessoas que querem assistir e apresentar aulas.
 
 Foi criado com Node, React, Express e PostgreeSQL.
