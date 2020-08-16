@@ -12,6 +12,15 @@ Projeto do evento da Rocketseat "Next Level Week" conectando pessoas que querem 
 
 Foi criado com Node, React, Express e PostgreeSQL.
 
+## Vidas negras importam
+
+**Esse repositório não tem "_master_"**. Leia mais:
+[GitHub troca termo "master" para evitar referências à escravidão][master-replace]
+e [_GitHub abandons 'master' term to avoid slavery row_][master-replace-en]
+
+[master-replace]: https://sempreupdate.com.br/github-troca-termo-master-para-evitar-referencias-a-escravidao/
+[master-replace-en]: https://www.bbc.com/news/technology-53050955
+
 ## Requisitos
 
 - NodeJs Stable (v10 or v12).

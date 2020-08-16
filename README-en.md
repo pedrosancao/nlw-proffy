@@ -11,6 +11,11 @@ looking for and giving classes.
 
 It is created with Node, React, Express and PostgreeSQL.
 
+## Black lives matter
+
+**This repository has no master**. Read more:
+[GitHub abandons 'master' term to avoid slavery row][master-replace].
+
 ## Requirements
 
 - NodeJs Stable (v10 or v12).
@@ -61,7 +66,7 @@ yarn start
 
 "Proffy" will open on a new browser window.
 
-## Rocketseat challenge: "Proffy" Version 2 
+## Rocketseat challenge: "Proffy" Version 2
 
 Bootcamp participants were challenged to implement the following requirements:
 
@@ -82,4 +87,5 @@ Full description on [Notion][proffy-v2] (in Portuguese).
 
 This software is released under MIT License, check [LICENSE](./LICENSE).
 
+[master-replace]: https://www.bbc.com/news/technology-53050955
 [proffy-v2]: https://www.notion.so/Vers-o-2-0-Proffy-eefca1b981694cd0a895613bc6235970
