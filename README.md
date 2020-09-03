@@ -86,7 +86,7 @@ Ao final do evento os participantes foram desafiados a implementar as seguintes 
 - [ ] Exibição de horários disponíveis dos "proffys"
 - [ ] Salvar "proffys" favoritos
 - [ ] Logout da aplicação
-- [x] Deploy da aplicação
+- [x] [Deploy da aplicação](https://www.notion.so/Deploy-NLW-56f2a980c20e41d6b1dd22a4d1348e6e)
 
 Descrição completa no [_Notion_][proffy-v2].
 

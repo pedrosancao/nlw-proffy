@@ -79,7 +79,7 @@ Bootcamp participants were challenged to implement the following requirements:
 - [ ] Show teacher schedule hours
 - [ ] Save favorite teachers
 - [ ] User logout
-- [ ] Deploy
+- [x] [Deploy](https://www.notion.so/Deploy-NLW-56f2a980c20e41d6b1dd22a4d1348e6e)
 
 Full description on [Notion][proffy-v2] (in Portuguese).
 
